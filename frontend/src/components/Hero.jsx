@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { EASE } from "@/components/shared/motion";
 
-const HEADLINE = ["Professional accounting", "& tax solutions for", "your business."];
+const HEADLINE = ["Professional Accounting", "& Tax solutions for", "your business."];
 
 const SERVICE_SUMMARY = [
   { label: "Accounting", icon: Calculator },
@@ -29,22 +29,27 @@ export const Hero = ({ onNavigate }) => {
       <div className="pointer-events-none absolute inset-0 bg-ledger opacity-35" />
       <div className="pointer-events-none absolute -left-32 top-24 h-72 w-72 rounded-full bg-brand-cyan/5 blur-3xl" />
       <div className="pointer-events-none absolute -right-32 bottom-20 h-96 w-96 rounded-full bg-brand-magenta/5 blur-3xl" />
-
       <div className="relative mx-auto grid min-h-[100svh] max-w-[1600px] grid-cols-12 items-center gap-x-0 gap-y-10 px-5 pb-12 pt-24 md:px-10 md:pb-16 md:pt-28 lg:gap-x-12 lg:px-16">
-        <div className="col-span-12 lg:col-span-8 xl:col-span-7">
+        <div className="relative col-span-12 lg:col-span-8 xl:col-span-7">
+          <img
+            src={`${process.env.PUBLIC_URL}/infitax-logo.png`}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/2 top-[43%] w-[min(110%,620px)] -translate-x-1/2 -translate-y-1/2 opacity-[0.055] mix-blend-multiply"
+          />
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="mb-6 flex items-center gap-3 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-graphite"
+            className="relative z-10 mb-6 flex items-center gap-3 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-graphite"
           >
             <span className="h-px w-8 brand-gradient" />
             InfiTax Accounting Services LLP
           </motion.div>
 
           <h1
-            className="font-serif font-medium tracking-tight text-midnight-ink"
-            style={{ fontSize: "clamp(2.6rem, 5.5vw, 5.6rem)", lineHeight: 1 }}
+            className="relative z-10 font-serif font-medium tracking-tight text-midnight-ink"
+            style={{ fontSize: "clamp(2.35rem, 4.9vw, 5rem)", lineHeight: 1.02 }}
           >
             {HEADLINE.map((line, index) => (
               <span key={line} className="reveal-mask">
@@ -65,24 +70,14 @@ export const Hero = ({ onNavigate }) => {
             animate={{ scaleX: 1 }}
             transition={{ duration: 1, ease: EASE, delay: 0.55 }}
             style={{ transformOrigin: "left" }}
-            className="mt-7 h-[2px] w-full max-w-xl brand-gradient"
+            className="relative z-10 mt-7 h-[2px] w-full max-w-xl brand-gradient"
           />
-
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: EASE, delay: 0.68 }}
-            className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-graphite/90 md:text-lg"
-          >
-            Reliable accounting, taxation, GST and business compliance services that help you stay
-            organised, compliant and focused on growth.
-          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: EASE, delay: 0.8 }}
-            className="mt-8"
+            transition={{ duration: 0.7, ease: EASE, delay: 0.68 }}
+            className="relative z-10 mt-8"
           >
             <button
               data-testid="hero-cta-services"
@@ -98,8 +93,8 @@ export const Hero = ({ onNavigate }) => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.95 }}
-            className="mt-7 flex flex-wrap gap-x-6 gap-y-3 font-sans text-sm text-graphite/75"
+            transition={{ duration: 0.7, delay: 0.83 }}
+            className="relative z-10 mt-7 flex flex-wrap gap-x-6 gap-y-3 font-sans text-sm text-graphite/75"
           >
             <span className="flex items-center gap-2">
               <ShieldCheck size={16} className="text-accounting-green" aria-hidden="true" />

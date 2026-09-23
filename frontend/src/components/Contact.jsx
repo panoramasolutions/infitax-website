@@ -73,7 +73,7 @@ export const Contact = () => {
                 href={buildWhatsAppLink(values.service)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-[6px] border border-accounting-green px-6 py-3.5 font-sans text-sm font-semibold text-accounting-green transition-colors duration-300 hover:bg-accounting-green hover:text-ivory"
+                className="hover-btn-gradient inline-flex items-center gap-2 rounded-[6px] border border-accounting-green px-6 py-3.5 font-sans text-sm font-semibold text-accounting-green transition-all duration-300"
               >
                 <MessageCircle size={15} /> WhatsApp us
               </a>
@@ -86,9 +86,10 @@ export const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="InfiTax on LinkedIn"
-                className="inline-flex items-center gap-2 rounded-[6px] bg-[#0A66C2] px-5 py-3 font-sans text-sm font-semibold text-white shadow-sm transition-transform duration-300 hover:-translate-y-0.5"
+                title="LinkedIn"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-[6px] bg-[#0A66C2] text-white shadow-sm transition-transform duration-300 hover:-translate-y-0.5"
               >
-                <Linkedin size={18} /> LinkedIn
+                <Linkedin size={22} />
               </a>
               <a
                 data-testid="social-instagram"
@@ -96,17 +97,52 @@ export const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="InfiTax on Instagram"
-                className="inline-flex items-center gap-2 rounded-[6px] bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737] px-5 py-3 font-sans text-sm font-semibold text-white shadow-sm transition-transform duration-300 hover:-translate-y-0.5"
+                title="Instagram"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-[6px] bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737] text-white shadow-sm transition-transform duration-300 hover:-translate-y-0.5"
               >
-                <Instagram size={18} /> Instagram
+                <Instagram size={22} />
+              </a>
+              <a
+                data-testid="social-whatsapp"
+                href={buildWhatsAppLink(values.service)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact InfiTax on WhatsApp"
+                title="WhatsApp"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-[6px] bg-[#25D366] text-white shadow-sm transition-transform duration-300 hover:-translate-y-0.5"
+              >
+                <MessageCircle size={22} />
+              </a>
+              <a
+                data-testid="contact-map-btn"
+                href={BUSINESS.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open InfiTax location in Google Maps"
+                title="Google Maps"
+                className="btn-gradient inline-flex h-12 w-12 items-center justify-center rounded-[6px] shadow-sm transition-transform duration-300 hover:-translate-y-0.5"
+              >
+                <MapPin size={22} />
               </a>
             </div>
 
             <div className="mt-8 grid grid-cols-1 gap-4 border-t border-midnight-ink/12 pt-6 sm:grid-cols-2">
               {BUSINESS.partners.map((p) => (
-                <div key={p.name}>
-                  <div className="font-serif text-lg text-midnight-ink">{p.name}</div>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-sage">{p.role}</div>
+                <div key={p.name} className="flex items-center justify-between gap-4 rounded-[8px] border border-midnight-ink/10 bg-warm-white px-4 py-3.5">
+                  <div>
+                    <div className="font-serif text-lg text-midnight-ink">{p.name}</div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-sage">{p.role}</div>
+                  </div>
+                  <a
+                    href={p.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${p.name} on LinkedIn`}
+                    title={`${p.name} on LinkedIn`}
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[6px] bg-[#0A66C2] text-white shadow-sm transition-transform duration-300 hover:-translate-y-0.5"
+                  >
+                    <Linkedin size={17} />
+                  </a>
                 </div>
               ))}
             </div>
@@ -164,7 +200,7 @@ export const Contact = () => {
                   data-testid="contact-submit-btn"
                   type="submit"
                   disabled={status === "loading"}
-                  className="group inline-flex items-center justify-center gap-2 rounded-[6px] bg-midnight-ink px-8 py-4 font-sans text-sm font-semibold text-ivory transition-colors duration-300 hover:bg-accounting-green disabled:cursor-not-allowed disabled:opacity-70"
+                  className="hover-btn-gradient group inline-flex items-center justify-center gap-2 rounded-[6px] bg-midnight-ink px-8 py-4 font-sans text-sm font-semibold text-ivory transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   {status === "loading" ? (
                     <><Loader2 size={16} className="animate-spin" /> Sending…</>

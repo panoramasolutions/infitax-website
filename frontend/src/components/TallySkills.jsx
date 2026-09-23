@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check, Download, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Check, Download } from "lucide-react";
 import { BUSINESS } from "@/config/business";
 import { Reveal } from "@/components/shared/motion";
 
@@ -6,6 +6,16 @@ const BENEFITS = [
   "Official Tally Education Certifications",
   "Hands-on Industry Training",
   "Access to Tally’s Official Placement Services",
+];
+
+const TALLY_COURSES = [
+  ["Tally Essential Level 1", "Accounting & Reporting", "35 Hrs"],
+  ["Tally Essential Level 2", "Accounts Payable & Accounts Receivable", "35 Hrs"],
+  ["Tally Essential Level 3", "Taxation & Compliance", "37 Hrs"],
+  ["Tally Essential Comprehensive", "Level 1 to 3", "107 Hrs"],
+  ["Tally Professional", "Accounting, Finance, Administration & HR", "100 Hrs"],
+  ["Office Automation", "Word, Excel, PowerPoint", "25 Hrs"],
+  ["Complete Guide to Payroll and Income Tax", "", "35 Hrs"],
 ];
 
 const getBrochureDownloadUrl = (url) => {
@@ -40,7 +50,8 @@ export const TallySkills = ({ onNavigate }) => {
                 Tally Education
               </div>
               <h2 className="mt-5 max-w-3xl font-serif text-4xl font-medium leading-[1.04] tracking-tight text-midnight-ink sm:text-5xl lg:text-6xl">
-                Get Certified. Get Placed.
+                <span className="block">Get Certified.</span>
+                <span className="block">Get Placed.</span>
               </h2>
             </Reveal>
 
@@ -73,24 +84,6 @@ export const TallySkills = ({ onNavigate }) => {
                 the placement support you deserve.
               </p>
 
-              <div className="mt-6 space-y-3 border-t border-midnight-ink/15 pt-5">
-                <div className="flex items-start gap-3 font-sans text-sm leading-relaxed text-graphite/90">
-                  <MapPin size={17} className="mt-0.5 shrink-0 text-accounting-green" aria-hidden="true" />
-                  <span>
-                    <strong className="font-semibold text-midnight-ink">Visit us at:</strong> Office
-                    No 1, KVK Xenia CHS, Plot No 53, Sector 4, Karanjade, Panvel - 410206.
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 font-sans text-sm text-graphite/90">
-                  <Phone size={17} className="shrink-0 text-accounting-green" aria-hidden="true" />
-                  <span>
-                    <strong className="font-semibold text-midnight-ink">Call/WA:</strong>{" "}
-                    <a className="link-underline" href="tel:+918850120408">8850120408</a>{" / "}
-                    <a className="link-underline" href="tel:+919819746501">9819746501</a>
-                  </span>
-                </div>
-              </div>
-
               <p className="mt-6 font-sans text-lg font-semibold text-midnight-ink">
                 Enroll today and secure your future!
               </p>
@@ -114,20 +107,51 @@ export const TallySkills = ({ onNavigate }) => {
                   className="inline-flex items-center gap-2 rounded-[6px] border border-midnight-ink/20 px-6 py-3.5 font-sans text-sm font-semibold text-midnight-ink transition-colors hover:border-accounting-green hover:text-accounting-green"
                 >
                   <Download size={16} aria-hidden="true" />
-                  Download brochure
+                  Download Brochure
                 </a>
               </div>
             </Reveal>
           </div>
 
           <Reveal delay={0.12}>
-            <div className="overflow-hidden rounded-[10px] border border-midnight-ink/15 bg-warm-paper p-2 shadow-xl shadow-midnight-ink/10">
-              <img
-                src={`${process.env.PUBLIC_URL}/tally-education-brochure.jpeg`}
-                alt="Tally Education certification and placement services brochure"
-                loading="lazy"
-                className="h-auto w-full rounded-[6px] object-contain"
-              />
+            <div className="rounded-[10px] border border-midnight-ink/15 bg-ivory p-6 shadow-xl shadow-midnight-ink/10 md:p-8">
+              <div className="flex items-center justify-between gap-5 border-b border-midnight-ink/12 pb-6">
+                <img
+                  src={`${process.env.PUBLIC_URL}/tally-education-logo.png`}
+                  alt="Tally Education"
+                  className="h-16 w-auto max-w-[190px] object-contain sm:h-20 sm:max-w-[230px]"
+                />
+                <span className="rounded-full bg-[#95C11F]/15 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#5D7F08]">
+                  Courses
+                </span>
+              </div>
+
+              <h3 className="mt-6 font-serif text-3xl font-semibold tracking-tight text-midnight-ink">
+                Tally Course List
+              </h3>
+
+              <ol className="mt-4 divide-y divide-midnight-ink/10">
+                {TALLY_COURSES.map(([title, detail, duration], index) => (
+                  <li key={title} className="grid grid-cols-[32px_1fr_auto] items-start gap-3 py-3.5">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#95C11F]/15 font-mono text-xs font-semibold text-[#5D7F08]">
+                      {index + 1}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-sans text-sm font-semibold leading-snug text-midnight-ink md:text-base">
+                        {title}
+                      </p>
+                      {detail && (
+                        <p className="mt-1 font-sans text-xs leading-relaxed text-graphite/75 md:text-sm">
+                          {detail}
+                        </p>
+                      )}
+                    </div>
+                    <span className="whitespace-nowrap rounded-full bg-warm-paper px-2.5 py-1 font-mono text-[10px] font-semibold text-accounting-green md:text-xs">
+                      {duration}
+                    </span>
+                  </li>
+                ))}
+              </ol>
             </div>
           </Reveal>
         </div>

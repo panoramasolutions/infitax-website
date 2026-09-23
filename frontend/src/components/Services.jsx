@@ -15,27 +15,17 @@ export const Services = () => {
       className="scroll-mt-24 bg-ivory bg-grain py-20 md:py-24"
     >
       <div className="mx-auto max-w-[1600px] px-5 md:px-10 lg:px-16">
-        <div className="grid grid-cols-12 items-end gap-x-0 gap-y-6 lg:gap-x-12">
-          <div className="col-span-12 lg:col-span-7">
-            <Reveal>
-              <div className="flex items-center gap-3 text-sm font-semibold text-accounting-green">
-                <span className="h-px w-8 brand-gradient" />
-                Our Services
-              </div>
-              <h2 className="mt-5 max-w-4xl font-serif text-4xl font-medium leading-[1.05] tracking-tight text-midnight-ink sm:text-5xl lg:text-6xl">
-                Professional Accounting &amp; Tax Solutions for Your Business
-              </h2>
-            </Reveal>
+        <Reveal>
+          <div className="flex items-center gap-3 text-sm font-semibold text-accounting-green">
+            <span className="h-px w-8 brand-gradient" />
+            Our Services
           </div>
-
-          <Reveal delay={0.1} className="col-span-12 lg:col-span-5">
-            <p className="max-w-xl font-sans text-base leading-relaxed text-graphite/85">
+          <p className="mt-5 max-w-3xl font-sans text-base leading-relaxed text-graphite/85 md:text-lg">
               At InfiTax Accounting Services LLP, we provide reliable accounting, taxation, GST
               and business compliance services designed to help businesses stay financially
-              organized, compliant and focused on growth
-            </p>
-          </Reveal>
-        </div>
+              organized, compliant and focused on growth.
+          </p>
+        </Reveal>
 
         <div
           role="tablist"
@@ -96,23 +86,10 @@ export const Services = () => {
                 <p className="font-sans text-sm font-semibold text-accounting-green">
                   {current.lead}
                 </p>
-                <h3 className="mt-3 font-serif text-3xl font-medium tracking-tight text-midnight-ink md:text-4xl">
-                  {current.title}
-                </h3>
-                <p className="mt-4 max-w-lg font-sans text-sm leading-relaxed text-graphite/85 md:text-base">
+                <p className="mt-3 max-w-lg font-sans text-sm leading-relaxed text-graphite/85 md:text-base">
                   {current.summary}
                 </p>
 
-                {current.noteLabel && (
-                  <div className="mt-6 border-l-2 border-accounting-green bg-warm-paper px-4 py-3.5">
-                    <p className="font-sans text-sm font-semibold text-midnight-ink">
-                      {current.noteLabel}
-                    </p>
-                    <p className="mt-1 font-sans text-sm leading-relaxed text-graphite/85">
-                      {current.message}
-                    </p>
-                  </div>
-                )}
               </div>
 
               <div className="col-span-12 lg:col-span-5">
@@ -137,6 +114,19 @@ export const Services = () => {
                   ))}
                 </div>
               </div>
+
+              {current.noteLabel && (
+                <div className="col-span-12 -mx-6 -mb-6 mt-2 border-t border-midnight-ink/12 bg-warm-paper/80 px-6 py-5 md:-mx-8 md:-mb-8 md:px-8 lg:-mx-10 lg:-mb-10 lg:px-10 lg:py-6">
+                  <div className="grid gap-2 md:grid-cols-[180px_1fr] md:items-start md:gap-6">
+                    <p className="font-sans text-sm font-semibold text-midnight-ink">
+                      {current.noteLabel}
+                    </p>
+                    <p className="font-sans text-sm leading-relaxed text-graphite/85 md:text-base">
+                      {current.message}
+                    </p>
+                  </div>
+                </div>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>

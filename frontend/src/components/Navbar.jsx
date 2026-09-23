@@ -53,11 +53,11 @@ export const Navbar = ({ onNavigate }) => {
             <img
               src={`${process.env.PUBLIC_URL}/infitax-logo.png`}
               alt="InfiTax logo"
-              className="h-8 w-auto md:h-9"
+              className="h-10 w-auto md:h-11"
             />
             <span className="leading-none">
-              <span className="block font-serif text-xl tracking-tight text-midnight-ink">InfiTax</span>
-              <span className="hidden font-mono text-[8px] uppercase tracking-[0.18em] text-muted-sage sm:block">
+              <span className="block font-serif text-2xl tracking-tight text-midnight-ink md:text-[26px]">InfiTax</span>
+              <span className="hidden font-mono text-[9px] uppercase tracking-[0.16em] text-muted-sage sm:block">
                 Accounting Services LLP
               </span>
             </span>
@@ -105,9 +105,9 @@ export const Navbar = ({ onNavigate }) => {
                 <img
                   src={`${process.env.PUBLIC_URL}/infitax-logo.png`}
                   alt="InfiTax logo"
-                  className="h-8 w-auto"
+                  className="h-10 w-auto"
                 />
-                <span className="font-serif text-2xl leading-none tracking-tight text-ivory">InfiTax</span>
+                <span className="font-serif text-[28px] leading-none tracking-tight text-ivory">InfiTax</span>
               </div>
               <button
                 data-testid="mobile-menu-close"

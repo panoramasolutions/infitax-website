@@ -6,7 +6,6 @@ import { Hero } from "@/components/Hero";
 import { TrustStrip } from "@/components/TrustStrip";
 import { Services } from "@/components/Services";
 import { TallySkills } from "@/components/TallySkills";
-import { Associations } from "@/components/Associations";
 import { WhyUs } from "@/components/WhyUs";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Contact } from "@/components/Contact";
@@ -31,7 +30,6 @@ function App() {
         <TrustStrip />
         <Services onNavigate={navigate} />
         <TallySkills onNavigate={navigate} />
-        <Associations />
         <WhyUs />
         <FinalCTA onNavigate={navigate} />
         <Contact />

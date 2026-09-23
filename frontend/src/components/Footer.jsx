@@ -1,11 +1,10 @@
-import { BUSINESS, buildTelLink, buildMailLink } from "@/config/business";
-import { Linkedin, Instagram } from "lucide-react";
+import { BUSINESS, buildTelLink, buildMailLink, buildWhatsAppLink } from "@/config/business";
+import { Linkedin, Instagram, MapPin, MessageCircle } from "lucide-react";
 
 const NAV = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
   { label: "Tally Education", href: "#tally" },
-  { label: "Associations", href: "#associations" },
   { label: "Contact us", href: "#contact" },
 ];
 
@@ -28,6 +27,24 @@ export const Footer = ({ onNavigate }) => {
             <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-sage">
               {BUSINESS.tagline}
             </p>
+            <div className="mt-6 overflow-hidden rounded-[8px] border border-ivory/15 bg-ivory/5">
+              <iframe
+                title="InfiTax office location"
+                src={BUSINESS.mapEmbedUrl}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-44 w-full border-0"
+              />
+            </div>
+            <a
+              href={BUSINESS.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 font-sans text-xs font-semibold text-ivory/75 transition-colors hover:text-ivory"
+            >
+              <MapPin size={14} /> Open in Google Maps
+            </a>
           </div>
 
           <div>
@@ -80,6 +97,12 @@ export const Footer = ({ onNavigate }) => {
               </a>
               <a href={BUSINESS.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-[6px] border border-ivory/20 text-ivory/80 transition-colors duration-300 hover:border-transparent hover:btn-gradient">
                 <Instagram size={15} />
+              </a>
+              <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex h-9 w-9 items-center justify-center rounded-[6px] border border-ivory/20 text-ivory/80 transition-colors duration-300 hover:border-transparent hover:text-accounting-green">
+                <MessageCircle size={15} />
+              </a>
+              <a href={BUSINESS.mapUrl} target="_blank" rel="noopener noreferrer" aria-label="Google Maps" className="flex h-9 w-9 items-center justify-center rounded-[6px] border border-ivory/20 text-ivory/80 transition-colors duration-300 hover:border-transparent hover:text-accounting-green">
+                <MapPin size={15} />
               </a>
             </div>
           </div>

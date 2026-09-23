@@ -6,7 +6,6 @@
 export const NAV_LINKS = [
   { label: "Services", href: "#services" },
   { label: "Tally Education", href: "#tally" },
-  { label: "Associations", href: "#associations" },
   { label: "Contact us", href: "#contact" },
 ];
 
@@ -14,8 +13,7 @@ export const MOBILE_NAV = [
   { no: "01", label: "Home", href: "#home" },
   { no: "02", label: "Services", href: "#services" },
   { no: "03", label: "Tally Education", href: "#tally" },
-  { no: "04", label: "Associations", href: "#associations" },
-  { no: "05", label: "Contact us", href: "#contact" },
+  { no: "04", label: "Contact us", href: "#contact" },
 ];
 
 export const APPROACH = [
@@ -272,10 +270,13 @@ export const SERVICE_OPTIONS = [
 ];
 
 export const TRUST_ITEMS = [
-  "Reliable accounting",
+  "Reliable Accounting",
   "GST compliance",
-  "TDS management",
-  "Tax assistance",
-  "Business compliance",
-  "Tally Skills",
+  "TDS Management",
+  "Tax Assistance",
+  "Business Setup",
+  "Taxation",
+  "Company Formation",
+  "Digital Signature",
+  "Tally Education",
 ];
