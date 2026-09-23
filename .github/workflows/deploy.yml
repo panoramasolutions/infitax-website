@@ -1,9 +1,11 @@
 name: Deploy to GitHub Pages
 
 # Builds the React (frontend) app and publishes it to GitHub Pages
-# when started manually from the Actions tab.
+# automatically on every push to the default branch.
 
 on:
+  push:
+    branches: [main, master]
   workflow_dispatch:
 
 # Permissions required by the official GitHub Pages deploy action.
