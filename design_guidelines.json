@@ -1,0 +1,146 @@
+{
+  "theme": {
+    "primary_mode": "light",
+    "description": "Premium, highly trustworthy, editorial, and sophisticated. Avoid generic SaaS or crypto templates. It must communicate Trust, Accuracy, Stability, Professionalism, Financial Intelligence, and Human Expertise.",
+    "archetype": "Old Money Tech / Swiss Brutalist hybrid - classic serif paired with sterile functional components."
+  },
+  "typography": {
+    "font_families": {
+      "heading": "Newsreader, serif",
+      "body": "Manrope, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl font-serif tracking-tight leading-none text-midnight-ink",
+      "h2": "text-4xl sm:text-5xl font-serif tracking-tight leading-tight text-midnight-ink",
+      "h3": "text-2xl sm:text-3xl font-serif leading-snug text-deep-navy",
+      "h4": "text-xl font-sans font-semibold tracking-tight text-graphite",
+      "body": "text-base lg:text-lg font-sans text-graphite leading-relaxed",
+      "eyebrow": "text-xs font-mono uppercase tracking-[0.2em] text-muted-sage",
+      "numbers": "font-serif tabular-nums tracking-tighter"
+    },
+    "instructions_to_main_agent": "Ensure 'Newsreader' and 'Manrope' are imported from Google Fonts in index.html. DO NOT use Inter or Roboto for headings. DO NOT center-align headings unless it's a specific stylistic choice (e.g., FAQ header). Oversized typography should be left-aligned in editorial layouts."
+  },
+  "colors": {
+    "palette": {
+      "midnight-ink": "#0B172A",
+      "deep-navy": "#102B46",
+      "ivory": "#F5F1E8",
+      "warm-paper": "#EDE6D9",
+      "muted-sage": "#879B83",
+      "accounting-green": "#326B55",
+      "graphite": "#252A2E",
+      "tally-accent": "#D97706",
+      "tally-teal": "#0F766E"
+    },
+    "surface_strategy": {
+      "background_primary": "bg-[#F5F1E8] (Ivory)",
+      "background_secondary": "bg-[#EDE6D9] (Warm Paper) for alternating sections",
+      "background_dark": "bg-[#0B172A] (Midnight Ink) for Tally Skills or Footer to create high contrast",
+      "borders": "border-[#879B83]/30 (Muted Sage transparent) for thin rules and ledger grids",
+      "text_primary": "text-[#0B172A]",
+      "text_secondary": "text-[#252A2E]"
+    },
+    "instructions_to_main_agent": "Add these colors to tailwind.config.js under `theme.extend.colors`. Never use pure white (#FFFFFF); use ivory (#F5F1E8) for surfaces. Tally Skills section should utilize `midnight-ink` background with `ivory` text and `tally-accent` (muted amber) for interactive states."
+  },
+  "layouts": {
+    "principles": [
+      "Editorial compositions with asymmetrical grids.",
+      "Generous whitespace (use p-12 to p-32 for sections).",
+      "Ledger-inspired structure: thin vertical and horizontal rules to separate content, not floating boxes.",
+      "Custom motifs: debit/credit markers, tabular numerals, ₹ typography, invoice numbering.",
+      "Avoid identical rounded card grids. Use sharp edges or max 4px rounding."
+    ],
+    "spacing_scale": {
+      "section_padding": "py-24 md:py-32",
+      "container_padding": "px-6 md:px-12 lg:px-24",
+      "grid_gap": "gap-8 md:gap-16 lg:gap-24"
+    }
+  },
+  "components": {
+    "navbar": {
+      "style": "Sticky navigation, scroll-solidify to crystal glassmorphism (backdrop-blur-xl bg-[#F5F1E8]/80 border-b border-[#879B83]/20). DO NOT use fully transparent background.",
+      "elements": "Logo (serif), 4-5 text links (sans), Primary CTA (pill-shaped, Midnight Ink background)."
+    },
+    "hero": {
+      "style": "Editorial Hero. Left 60% massive serif headline. Right 40% abstract CSS accounting/ledger composition. No fake dashboard screenshots.",
+      "elements": "H1 text, subtle animated underline, primary CTA, secondary link, right side composed of fine CSS lines, geometric shapes, and tabular numbers fading in."
+    },
+    "trust_strip": {
+      "style": "Horizontal marquee ticker using `react-fast-marquee`. Low contrast, Warm Paper background, Muted Sage typography.",
+      "elements": "Accounting certifications, partners, or 'Trust • Accuracy • Compliance' separated by subtle dot or cross icons."
+    },
+    "services_grid": {
+      "style": "Asymmetric editorial grid. Accounting & Bookkeeping spans multiple rows/cols. Thin border rules separating grid items (border-collapse look).",
+      "elements": "Grid cols 1 to 12. Use subgrid if possible. Numbered items (01, 02) in serif."
+    },
+    "tally_skills_academy": {
+      "style": "Visually distinct. Dark theme inside (Midnight Ink background). High contrast.",
+      "elements": "Interactive vertical curriculum index (01-07). Hover reveals image or detail. Big typographic statement 'DON\\'T JUST LEARN WHERE TO CLICK. UNDERSTAND WHAT THE ENTRY MEANS.' in ivory or tally-accent."
+    },
+    "contact_form": {
+      "style": "Premium simple form using Shadcn Input/Textarea but heavily customized to look like a physical paper ledger.",
+      "elements": "Bottom border only for inputs (border-b), no full borders. Call/WhatsApp CTAs prominent."
+    }
+  },
+  "motion": {
+    "principles": [
+      "Restrained — 300-600ms entrance transitions.",
+      "Subtle stagger on grid items.",
+      "Clip reveals for typography.",
+      "Underline animations on hover.",
+      "Respect prefers-reduced-motion."
+    ],
+    "instructions_to_main_agent": "Use Framer Motion for section reveals. Use 'ease: [0.16, 1, 0.3, 1]' for premium feel. Do not use bouncy or fast elastic animations. Do NOT apply universal transition (transition: all) in CSS."
+  },
+  "media": {
+    "image_urls": {
+      "hero_abstract": {
+        "url": "https://images.unsplash.com/photo-1599154835000-33a380865ca8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMGFjY291bnRpbmclMjBsZWRnZXIlMjBhYnN0cmFjdHxlbnwwfHx8fDE3ODc0NjAzMDJ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract paper layers for hero or services background composition."
+      },
+      "vintage_ledger": {
+        "url": "https://images.pexels.com/photos/164686/pexels-photo-164686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Close-up of a vintage handwritten ledger detailing financial records. Use in 'Business Accounting insight' section."
+      },
+      "professionals_1": {
+        "url": "https://images.pexels.com/photos/7580707/pexels-photo-7580707.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Indian business professional in suit. Use for 'Who We Serve' or 'About' section."
+      },
+      "professionals_2": {
+        "url": "https://images.pexels.com/photos/7581016/pexels-photo-7581016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Two professionals discussing project plans. Use for 'Process' or 'Support' section."
+      },
+      "students_1": {
+        "url": "https://images.unsplash.com/photo-1569653402334-2e98fbaa80ee?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxlYXJuaW5nJTIwY29tcHV0ZXJzJTIwdHJhaW5pbmd8ZW58MHx8fHwxNzg3NDYwMzAyfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Students learning computers. Use in 'Tally Skills Academy' section."
+      },
+      "students_2": {
+        "url": "https://images.unsplash.com/photo-1640163561331-1b68a6474957?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwzfHxzdHVkZW50cyUyMGxlYXJuaW5nJTIwY29tcHV0ZXJzJTIwdHJhaW5pbmd8ZW58MHx8fHwxNzg3NDYwMzAyfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Woman sitting in front of a computer monitor. Use in 'Tally Skills Academy' curriculum reveal."
+      }
+    },
+    "instructions_to_main_agent": "Overlay images with a warm tint (Ivory) or deep blue tint (Midnight Ink) using mix-blend-mode or pseudo-elements so they match the color system. Do NOT use placeholder URLs. Always maintain minimum 3:1 contrast ratio over images."
+  },
+  "libraries": [
+    "framer-motion",
+    "lucide-react",
+    "react-fast-marquee",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "accessibility": {
+    "instructions": "Ensure form inputs have clear accessible labels. High contrast text for all accounting numbers. Do not rely entirely on color to communicate debit/credit (use +/- or up/down arrows). Use data-testid on interactive elements."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic outputs. Avoid this: make creative, distinctive frontends.",
+    "Do NOT make generic centered layouts. Create depth through layered design elements.",
+    "Do NOT apply universal transitions (e.g., transition: all). Add transitions for specific interactive elements.",
+    "Do NOT center align the app container. No '.App { text-align: center; }'.",
+    "Use modern button styles (pill-shaped or sharp).",
+    "Never use AI assistant emojis. Use Lucide icons.",
+    "Provide specific interactive states (hover/focus) with accessible contrast.",
+    "All interactive elements must include data-testid.",
+    "Use Shadcn components for UI logic but remove Verce/Stripe look to match the editorial brand."
+  ]
+}
