@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
 import { WHY_US } from "@/data/content";
-import { Reveal } from "@/components/shared/motion";
+import { ChapterLabel, Reveal } from "@/components/shared/motion";
 
 export const WhyUs = () => {
   return (
@@ -13,10 +13,7 @@ export const WhyUs = () => {
         <div className="grid grid-cols-12 items-end gap-x-0 gap-y-6 lg:gap-x-12">
           <div className="col-span-12 lg:col-span-7">
             <Reveal>
-              <div className="flex items-center gap-3 text-sm font-semibold text-accounting-green">
-                <span className="h-px w-8 brand-gradient" />
-                Why Choose InfiTax?
-              </div>
+              <ChapterLabel label="Why Choose InfiTax?" />
               <h2 className="mt-5 max-w-4xl font-serif text-4xl font-medium leading-[1.05] tracking-tight text-midnight-ink sm:text-5xl lg:text-6xl">
                 Reliable. Professional. Business-Focused.
               </h2>

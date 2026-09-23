@@ -38,15 +38,25 @@ export const Footer = ({ onNavigate }) => {
             <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-sage">
               {BUSINESS.tagline}
             </p>
-            <div className="mt-6 overflow-hidden rounded-[8px] border border-ivory/15 bg-ivory/5">
+            <div className="relative mt-6 overflow-hidden rounded-[8px] border border-ivory/15 bg-ivory/5">
               <iframe
                 title="InfiTax office location"
                 src={BUSINESS.mapEmbedUrl}
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
-                className="h-44 w-full border-0"
+                className="pointer-events-none h-44 w-full border-0"
               />
+              <a
+                href={BUSINESS.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open the exact InfiTax office location in Google Maps"
+                title="Open the exact InfiTax office location"
+                className="absolute inset-0 z-10 cursor-pointer"
+              >
+                <span className="sr-only">Open the exact InfiTax office location in Google Maps</span>
+              </a>
             </div>
             <a
               href={BUSINESS.mapUrl}

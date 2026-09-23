@@ -72,15 +72,7 @@ export const Contact = () => {
               >
                 <Phone size={15} /> Call us
               </a>
-              <a
-                data-testid="contact-whatsapp-btn"
-                href={buildWhatsAppLink(values.service)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover-btn-gradient inline-flex items-center gap-2 rounded-[6px] border border-accounting-green px-6 py-3.5 font-sans text-sm font-semibold text-accounting-green transition-all duration-300"
-              >
-                <MessageCircle size={15} /> WhatsApp us
-              </a>
+
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">

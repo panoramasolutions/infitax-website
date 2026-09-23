@@ -273,7 +273,7 @@ export const SERVICE_OPTIONS = [
 
 export const TRUST_ITEMS = [
   "Reliable Accounting",
-  "GST compliance",
+  "GST Compliance",
   "TDS Management",
   "Tax Assistance",
   "Business Setup",

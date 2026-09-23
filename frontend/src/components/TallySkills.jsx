@@ -1,6 +1,6 @@
 import { ArrowUpRight, Check, Download } from "lucide-react";
 import { BUSINESS } from "@/config/business";
-import { Reveal } from "@/components/shared/motion";
+import { ChapterLabel, Reveal } from "@/components/shared/motion";
 
 const BENEFITS = [
   "Official Tally Education Certifications",
@@ -45,10 +45,7 @@ export const TallySkills = ({ onNavigate }) => {
         <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
           <div>
             <Reveal>
-              <div className="flex items-center gap-3 text-sm font-semibold text-tally-accent">
-                <span className="h-px w-8 brand-gradient" />
-                Tally Education
-              </div>
+              <ChapterLabel label="Tally Education" />
               <h2 className="mt-5 max-w-3xl font-serif text-4xl font-medium leading-[1.04] tracking-tight text-midnight-ink sm:text-5xl lg:text-6xl">
                 <span className="block">Get Certified.</span>
                 <span className="block">Get Placed.</span>

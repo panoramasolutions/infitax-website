@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { BigMark, Reveal } from "@/components/shared/motion";
+import { BigMark, ChapterLabel, Reveal } from "@/components/shared/motion";
 
 export const FinalCTA = ({ onNavigate }) => {
   return (
@@ -14,10 +14,7 @@ export const FinalCTA = ({ onNavigate }) => {
         <div className="grid grid-cols-12 items-end gap-x-0 gap-y-8 lg:gap-x-12">
           <div className="col-span-12 lg:col-span-7">
             <Reveal>
-              <div className="flex items-center gap-3 text-sm font-semibold text-accounting-green">
-                <span className="h-px w-8 brand-gradient" />
-                Our Commitment
-              </div>
+              <ChapterLabel label="Our Commitment" />
               <h2 className="mt-5 max-w-4xl font-serif text-4xl font-medium leading-[1.04] tracking-tight text-midnight-ink sm:text-5xl lg:text-6xl">
                 Your Compliance.
                 Our Responsibility.
@@ -64,10 +61,10 @@ export const FinalCTA = ({ onNavigate }) => {
 
         <Reveal delay={0.2}>
           <p className="mt-8 font-sans text-sm font-medium tracking-wide text-muted-sage">
-            Accounting <span className="text-graphite/25">|</span> INCOME TAX{" "}
+            Accounting <span className="text-graphite/25">|</span> Income Tax{" "}
             <span className="text-graphite/25">|</span> GST{" "}
-            <span className="text-graphite/25">|</span> BUSINESS COMPLIANCE{"  "}
-            <span className="text-graphite/25">|</span> COMPANY FORMATION
+            <span className="text-graphite/25">|</span> Business Compliance{"  "}
+            <span className="text-graphite/25">|</span> Company Formation
           </p>
         </Reveal>
       </div>

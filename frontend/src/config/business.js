@@ -48,7 +48,7 @@ export const BUSINESS = {
   },
   mapUrl: "https://maps.app.goo.gl/2sDcuiQHuoCYBbkK8",
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Office%20No.%201%2C%20First%20Floor%2C%20KVK%20Xenia%2C%20Plot%20No.%2053%2C%20Sector%204%2C%20Karanjade%2C%20Panvel%20410206&output=embed",
+    "https://www.google.com/maps?q=18.976933%2C73.1057261&z=18&output=embed",
 
   tallyAuthorized: true,
 

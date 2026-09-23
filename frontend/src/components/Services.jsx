@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { SERVICES } from "@/data/content";
-import { EASE, Reveal } from "@/components/shared/motion";
+import { ChapterLabel, EASE, Reveal } from "@/components/shared/motion";
 
 export const Services = () => {
   const [active, setActive] = useState(0);
@@ -16,10 +16,7 @@ export const Services = () => {
     >
       <div className="mx-auto max-w-[1600px] px-5 md:px-10 lg:px-16">
         <Reveal>
-          <div className="flex items-center gap-3 text-sm font-semibold text-accounting-green">
-            <span className="h-px w-8 brand-gradient" />
-            Our Services
-          </div>
+          <ChapterLabel label="Our Services" />
           <p className="mt-5 max-w-3xl font-sans text-base leading-relaxed text-graphite/85 md:text-lg">
               At InfiTax Accounting Services LLP, we provide reliable accounting, taxation, GST
               and business compliance services designed to help businesses stay financially

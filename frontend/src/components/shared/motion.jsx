@@ -48,10 +48,10 @@ export function Reveal({ children, className = "", delay = 0, y = 22 }) {
 
 // Reusable section label without numeric indexing.
 export function ChapterLabel({ label, light = false, className = "" }) {
-  const color = light ? "text-muted-sage" : "text-graphite";
+  const color = light ? "text-ivory/75" : "text-graphite";
   return (
-    <div className={`flex items-center gap-3 font-mono text-xs uppercase tracking-[0.24em] ${color} ${className}`}>
-      <span className="h-px w-6 brand-gradient" />
+    <div className={`flex items-center gap-5 font-sans text-sm font-medium uppercase tracking-[0.28em] sm:text-base ${color} ${className}`}>
+      <span className="h-px w-12 shrink-0 brand-gradient" />
       <span>{label}</span>
     </div>
   );
@@ -61,11 +61,11 @@ export function Eyebrow({ children, className = "", light = false, testId }) {
   return (
     <div
       data-testid={testId}
-      className={`inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.24em] ${
-        light ? "text-muted-sage" : "text-graphite"
+      className={`inline-flex items-center gap-5 font-sans text-sm font-medium uppercase tracking-[0.28em] sm:text-base ${
+        light ? "text-ivory/75" : "text-graphite"
       } ${className}`}
     >
-      <span className="h-px w-8 brand-gradient" />
+      <span className="h-px w-12 shrink-0 brand-gradient" />
       {children}
     </div>
   );

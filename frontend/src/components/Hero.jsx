@@ -41,9 +41,9 @@ export const Hero = ({ onNavigate }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="relative z-10 mb-6 flex items-center gap-3 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-graphite"
+            className="relative z-10 mb-6 flex items-center gap-3 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-graphite sm:gap-5 sm:text-base sm:tracking-[0.28em]"
           >
-            <span className="h-px w-8 brand-gradient" />
+            <span className="h-px w-8 shrink-0 brand-gradient sm:w-12" />
             InfiTax Accounting Services LLP
           </motion.div>
 
