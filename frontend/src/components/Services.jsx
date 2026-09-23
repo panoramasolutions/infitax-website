@@ -83,7 +83,7 @@ export const Services = () => {
               </div>
 
               <div className="col-span-12 lg:col-span-3">
-                <p className="font-sans text-sm font-semibold text-accounting-green">
+                <p className="font-sans text-lg font-semibold text-accounting-green">
                   {current.lead}
                 </p>
                 <p className="mt-3 max-w-lg font-sans text-sm leading-relaxed text-graphite/85 md:text-base">

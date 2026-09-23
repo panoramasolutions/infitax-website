@@ -18,12 +18,12 @@ export const BUSINESS = {
   },
 
   address:
-    "Office No. 1, First Floor, KVK Xenia, Plot No. 53, Sector 4, Karanjade, Panvel – 410206, Maharashtra.",
+    "Office No. 1, First Floor, KVK Xenia, Plot No. 53, Sector 4, Karanjade, Panvel, Navi Mumbai – 410206, Maharashtra.",
   addressLines: [
     "Office No. 1, First Floor,",
     "KVK Xenia, Plot No. 53,",
     "Sector 4, Karanjade,",
-    "Panvel – 410206, Maharashtra.",
+    "Panvel, Navi Mumbai – 410206, Maharashtra.",
   ],
   workingHours: "Monday – Saturday · 10:30 AM – 6:30 PM",
 

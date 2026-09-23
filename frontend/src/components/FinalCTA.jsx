@@ -19,7 +19,8 @@ export const FinalCTA = ({ onNavigate }) => {
                 Our Commitment
               </div>
               <h2 className="mt-5 max-w-4xl font-serif text-4xl font-medium leading-[1.04] tracking-tight text-midnight-ink sm:text-5xl lg:text-6xl">
-                Your Compliance. Our Responsibility.
+                Your Compliance.
+                Our Responsibility.
               </h2>
             </Reveal>
           </div>
@@ -43,7 +44,7 @@ export const FinalCTA = ({ onNavigate }) => {
           <div className="mt-12 grid items-center gap-6 rounded-[10px] border border-midnight-ink/12 bg-warm-paper p-6 md:grid-cols-[1fr_auto] md:p-8">
             <div>
               <h3 className="font-serif text-2xl font-semibold text-midnight-ink md:text-3xl">
-                Need professional accounting or tax support?
+                Need Professional Accounting or Tax support?
               </h3>
               <p className="mt-2 font-sans text-sm leading-relaxed text-graphite/85 md:text-base">
                 Contact InfiTax Accounting Services LLP today to discuss your requirements.
@@ -63,9 +64,10 @@ export const FinalCTA = ({ onNavigate }) => {
 
         <Reveal delay={0.2}>
           <p className="mt-8 font-sans text-sm font-medium tracking-wide text-muted-sage">
-            Accounting <span className="text-graphite/25">|</span> Income Tax{" "}
+            Accounting <span className="text-graphite/25">|</span> INCOME TAX{" "}
             <span className="text-graphite/25">|</span> GST{" "}
-            <span className="text-graphite/25">|</span> Business Compliance
+            <span className="text-graphite/25">|</span> BUSINESS COMPLIANCE{"  "}
+            <span className="text-graphite/25">|</span> COMPANY FORMATION
           </p>
         </Reveal>
       </div>

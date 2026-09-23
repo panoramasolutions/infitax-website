@@ -43,8 +43,12 @@ export const Contact = () => {
             <MaskText
               as="h2"
               className="font-serif font-medium leading-[1.0] tracking-tight text-midnight-ink text-5xl sm:text-6xl"
-              lines={["Contact us"]}
+              lines={["Get in Touch"]}
             />
+            <p className="mt-6 max-w-xl font-sans text-base leading-relaxed text-graphite/85 md:text-lg">
+              Let us take the burden of compliance off your shoulders. Partner with InfiTax today
+              for a Strategic Accounting advantage.
+            </p>
             <div className="mt-12 space-y-6">
               {DETAILS.map((d) => (
                 <div key={d.label} className="flex items-start gap-4 border-b border-midnight-ink/12 pb-5">

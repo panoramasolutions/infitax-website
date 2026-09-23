@@ -4,6 +4,7 @@
 // ─────────────────────────────────────────────────────────────
 
 export const NAV_LINKS = [
+  { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Tally Education", href: "#tally" },
   { label: "Contact us", href: "#contact" },
@@ -11,9 +12,10 @@ export const NAV_LINKS = [
 
 export const MOBILE_NAV = [
   { no: "01", label: "Home", href: "#home" },
-  { no: "02", label: "Services", href: "#services" },
-  { no: "03", label: "Tally Education", href: "#tally" },
-  { no: "04", label: "Contact us", href: "#contact" },
+  { no: "02", label: "About", href: "#about" },
+  { no: "03", label: "Services", href: "#services" },
+  { no: "04", label: "Tally Education", href: "#tally" },
+  { no: "05", label: "Contact us", href: "#contact" },
 ];
 
 export const APPROACH = [

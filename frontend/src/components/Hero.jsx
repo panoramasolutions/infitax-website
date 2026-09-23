@@ -102,7 +102,7 @@ export const Hero = ({ onNavigate }) => {
             </span>
             <span className="flex items-center gap-2">
               <MapPin size={16} className="text-accounting-green" aria-hidden="true" />
-              Panvel · Supporting clients across India
+              Navi Mumbai · Supporting clients across India
             </span>
           </motion.div>
         </div>

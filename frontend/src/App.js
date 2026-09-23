@@ -4,6 +4,7 @@ import "@/App.css";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TrustStrip } from "@/components/TrustStrip";
+import { AboutFirm } from "@/components/AboutFirm";
 import { Services } from "@/components/Services";
 import { TallySkills } from "@/components/TallySkills";
 import { WhyUs } from "@/components/WhyUs";
@@ -11,6 +12,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { MobileCTA } from "@/components/MobileCTA";
+import { BackToTop } from "@/components/BackToTop";
 
 function App() {
   const navigate = useCallback((href) => {
@@ -28,6 +30,7 @@ function App() {
       <main>
         <Hero onNavigate={navigate} />
         <TrustStrip />
+        <AboutFirm />
         <Services onNavigate={navigate} />
         <TallySkills onNavigate={navigate} />
         <WhyUs />
@@ -36,6 +39,7 @@ function App() {
       </main>
       <Footer onNavigate={navigate} />
       <MobileCTA />
+      <BackToTop />
     </div>
   );
 }
