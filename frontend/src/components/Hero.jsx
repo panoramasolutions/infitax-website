@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { EASE } from "@/components/shared/motion";
 
-const HEADLINE = ["Professional Accounting", "& Tax solutions for", "your business."];
+const HEADLINE = ["Your Trusted partner in", "Accounting, Taxation &", "Compliance."];
 
 const SERVICE_SUMMARY = [
   { label: "Accounting", icon: Calculator },
@@ -98,7 +98,7 @@ export const Hero = ({ onNavigate }) => {
           >
             <span className="flex items-center gap-2">
               <ShieldCheck size={16} className="text-accounting-green" aria-hidden="true" />
-              Professional and transparent
+              Professional and Transparent
             </span>
             <span className="flex items-center gap-2">
               <MapPin size={16} className="text-accounting-green" aria-hidden="true" />
