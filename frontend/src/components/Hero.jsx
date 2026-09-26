@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { EASE } from "@/components/shared/motion";
 
-const HEADLINE = ["Your Trusted partner in", "Accounting, Taxation &", "Compliance."];
+const HEADLINE = ["Your Trusted Partner in", "Accounting, Taxation &", "Compliance."];
 
 const SERVICE_SUMMARY = [
   { label: "Accounting", icon: Calculator },

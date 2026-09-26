@@ -4,7 +4,9 @@ A production-ready single-page website for an Indian accounting, taxation and
 compliance firm, with a dedicated **Authorized Tally Training Centre** section.
 
 Built with **React + Tailwind CSS**, animated with **Framer Motion** and
-**Lenis** smooth scrolling. Frontend-only — no backend required.
+**Lenis** smooth scrolling. The public site is static and deploys to GitHub
+Pages. Contact enquiries are stored through a small Google Apps Script web app
+connected to Google Sheets.
 
 ## Getting started
 
@@ -24,20 +26,16 @@ Everything about the firm lives in one file:
 
 ## Contact form → Google Sheets
 
-The contact form is frontend-only and currently simulates a successful
-submission. To connect it to Google Sheets:
+The form submits to a Google Apps Script web app and stores each enquiry in an
+`Enquiries` worksheet. The Apps Script source and complete setup instructions
+are in [`google-apps-script/`](google-apps-script/README.md).
 
-1. Create a Google Apps Script Web App that appends rows to a sheet.
-2. Paste its URL into `CONTACT_FORM_ENDPOINT` in `src/utils/contactApi.js`.
+For local development, copy `frontend/.env.example` to `frontend/.env.local`
+and replace the sample value with the deployed Apps Script `/exec` URL.
 
-The submitted payload keys map directly to sheet columns:
-
-```js
-{ name, phone, email, service, message, submittedAt, source }  // source: "Website"
-```
-
-No UI changes are needed — the submission logic is isolated in
-`src/hooks/useContactForm.js` and `src/utils/contactApi.js`.
+For GitHub Pages, create the repository Actions variable
+`REACT_APP_CONTACT_FORM_ENDPOINT`. The deployment workflow injects it when the
+React app is built.
 
 ## Deploying to GitHub Pages
 

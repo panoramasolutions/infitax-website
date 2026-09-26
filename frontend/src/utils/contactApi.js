@@ -1,43 +1,59 @@
-// ─────────────────────────────────────────────────────────────
-//  CONTACT FORM SUBMISSION UTILITY
-//
-//  The form is currently frontend-only. When you are ready to
-//  connect it to Google Sheets, deploy a Google Apps Script Web
-//  App and paste its URL into CONTACT_FORM_ENDPOINT below.
-//
-//  The payload keys map directly to Google Sheet columns.
-// ─────────────────────────────────────────────────────────────
+const CONTACT_FORM_ENDPOINT = (
+  process.env.REACT_APP_CONTACT_FORM_ENDPOINT || ""
+).trim();
 
-export const CONTACT_FORM_ENDPOINT = ""; // e.g. "https://script.google.com/macros/s/XXXX/exec"
+const APPS_SCRIPT_WEB_APP_URL =
+  /^https:\/\/script\.google\.com\/macros\/s\/[a-zA-Z0-9_-]+\/exec$/;
+
+const REQUEST_TIMEOUT_MS = 15000;
+
+export function isContactFormConfigured() {
+  return APPS_SCRIPT_WEB_APP_URL.test(CONTACT_FORM_ENDPOINT);
+}
 
 export async function submitContactForm(data) {
+  if (!CONTACT_FORM_ENDPOINT) {
+    throw new Error("The contact form endpoint has not been configured.");
+  }
+
+  if (!isContactFormConfigured()) {
+    throw new Error("The contact form endpoint is not a valid Apps Script web app URL.");
+  }
+
   const payload = {
-    name: data.name,
-    phone: data.phone,
-    email: data.email,
-    service: data.service,
-    message: data.message,
+    name: data.name.trim(),
+    phone: data.phone.trim(),
+    email: data.email.trim(),
+    service: data.service.trim(),
+    message: data.message.trim(),
+    website: data.website || "",
     submittedAt: new Date().toISOString(),
-    source: "Website",
+    source: "InfiTax Website",
+    pageUrl: window.location.href,
   };
 
-  // No endpoint configured yet — simulate a successful submission so
-  // the UI can be reviewed. Swap in your Apps Script URL to go live.
-  if (!CONTACT_FORM_ENDPOINT) {
-    await new Promise((r) => setTimeout(r, 900));
-    return { ok: true, payload, simulated: true };
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+  try {
+    // Apps Script ContentService redirects responses to googleusercontent.com.
+    // no-cors allows this static GitHub Pages site to submit without a preflight.
+    await fetch(CONTACT_FORM_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      cache: "no-store",
+      credentials: "omit",
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      headers: {
+        "Content-Type": "text/plain;charset=UTF-8",
+      },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+  } finally {
+    window.clearTimeout(timeoutId);
   }
 
-  const response = await fetch(CONTACT_FORM_ENDPOINT, {
-    method: "POST",
-    // Apps Script Web Apps accept text/plain to avoid CORS preflight.
-    headers: { "Content-Type": "text/plain;charset=utf-8" },
-    body: JSON.stringify(payload),
-  });
-
-  if (!response.ok) {
-    throw new Error(`Submission failed with status ${response.status}`);
-  }
-
-  return { ok: true, payload, simulated: false };
+  return { ok: true };
 }

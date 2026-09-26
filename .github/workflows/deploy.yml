@@ -44,6 +44,8 @@ jobs:
           # Do not fail the build on ESLint warnings.
           CI: "false"
           NODE_OPTIONS: --max_old_space_size=4096
+          # Configure this under Settings > Secrets and variables > Actions > Variables.
+          REACT_APP_CONTACT_FORM_ENDPOINT: ${{ vars.REACT_APP_CONTACT_FORM_ENDPOINT }}
         run: npm run build
 
       - name: Add SPA 404 fallback

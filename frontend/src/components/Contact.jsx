@@ -164,17 +164,29 @@ export const Contact = () => {
                 </button>
               </div>
             ) : (
-              <form data-testid="contact-form" onSubmit={handleSubmit} noValidate className="space-y-8">
+              <form data-testid="contact-form" onSubmit={handleSubmit} noValidate className="relative space-y-8">
+                <div className="pointer-events-none absolute h-px w-px overflow-hidden opacity-0" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={values.website}
+                    onChange={(e) => setField("website", e.target.value)}
+                  />
+                </div>
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                   <Field id="name" label="Name" error={errors.name}>
-                    <input id="name" data-testid="input-name" type="text" value={values.name} onChange={(e) => setField("name", e.target.value)} className={inputCls} placeholder="Full name" />
+                    <input id="name" data-testid="input-name" type="text" maxLength={120} value={values.name} onChange={(e) => setField("name", e.target.value)} className={inputCls} placeholder="Full name" />
                   </Field>
                   <Field id="phone" label="Phone" error={errors.phone}>
-                    <input id="phone" data-testid="input-phone" type="tel" value={values.phone} onChange={(e) => setField("phone", e.target.value)} className={inputCls} placeholder="+91 00000 00000" />
+                    <input id="phone" data-testid="input-phone" type="tel" maxLength={20} value={values.phone} onChange={(e) => setField("phone", e.target.value)} className={inputCls} placeholder="+91 00000 00000" />
                   </Field>
                 </div>
                 <Field id="email" label="Email" error={errors.email}>
-                  <input id="email" data-testid="input-email" type="email" value={values.email} onChange={(e) => setField("email", e.target.value)} className={inputCls} placeholder="you@company.com" />
+                  <input id="email" data-testid="input-email" type="email" maxLength={180} value={values.email} onChange={(e) => setField("email", e.target.value)} className={inputCls} placeholder="you@company.com" />
                 </Field>
                 <Field id="service" label="Requirement" error={errors.service}>
                   <select id="service" data-testid="select-service" value={values.service} onChange={(e) => setField("service", e.target.value)} className={`${inputCls} cursor-pointer`}>
@@ -183,7 +195,7 @@ export const Contact = () => {
                   </select>
                 </Field>
                 <Field id="message" label="Message" error={errors.message}>
-                  <textarea id="message" data-testid="input-message" rows={2} value={values.message} onChange={(e) => setField("message", e.target.value)} className={`${inputCls} resize-none`} placeholder="A few lines about what you need…" />
+                  <textarea id="message" data-testid="input-message" rows={2} maxLength={3000} value={values.message} onChange={(e) => setField("message", e.target.value)} className={`${inputCls} resize-none`} placeholder="A few lines about what you need…" />
                 </Field>
 
                 {status === "error" && (
