@@ -57,7 +57,7 @@ export const Navbar = ({ onNavigate }) => {
             />
             <span className="leading-none">
               <span className="block font-serif text-2xl tracking-tight text-midnight-ink md:text-[26px]">InfiTax</span>
-              <span className="hidden font-mono text-[9px] uppercase tracking-[0.16em] text-muted-sage sm:block">
+              <span className="block whitespace-nowrap font-mono text-[7px] uppercase tracking-[0.08em] text-muted-sage min-[360px]:text-[8px] min-[360px]:tracking-[0.12em] sm:text-[9px] sm:tracking-[0.16em]">
                 Accounting Services LLP
               </span>
             </span>
